@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -9,8 +9,13 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ReactiveFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  
+  exports: [
+    ReactiveFormComponent,
+  ]
+
 })
 export class WebModule { }

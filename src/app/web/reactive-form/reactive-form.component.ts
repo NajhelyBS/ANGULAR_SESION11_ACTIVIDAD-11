@@ -47,13 +47,13 @@ export class ReactiveFormComponent implements OnInit {
   loadAPI():any{
     const response = {
       name: "Miguel DIAZ",
-      email: 'docente@gmail.com',
+      email: 'mdiaz@gmail.com',
+      message: "Escribe aquí tu mensaje...",
     };
 
     this.formLogin.patchValue(response);
     
   }
-
 
   send(): any{
     console.log(this.formLogin.value)
