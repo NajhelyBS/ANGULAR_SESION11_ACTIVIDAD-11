@@ -11,52 +11,54 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class ReactiveFormComponent implements OnInit {
 
-  public formLogin!: FormGroup;
-  correo!:string;
+  //creating our form
+  public formValidation!: FormGroup;
 
   constructor(private formBuilder:FormBuilder){
 
   }
 
+  //Dando Validaciones
   ngOnInit(): void {
-    this.formLogin = this.formBuilder.group({
-      name:['', 
-        [
-          Validators.required,
-          Validators.minLength(12)
-        ]
-      ],
-      email:['', 
-        [
-          Validators.required,
-          Validators.email
-        ]
-      ],
-      message:['', 
-        [
-          Validators.required,
-          Validators.maxLength(500),
-        ]
-      ],
-    })
 
-    this.loadAPI()
+
+    this.formValidation = this.formBuilder.group({
+      name:['', [Validators.required, Validators.minLength(12)]],
+
+      email:['', [Validators.required, Validators.email]],
+      
+      message:['', [Validators.required, Validators.maxLength(500),]],})
+   
+    this.loadAPI();
+    this.Mensajes();
+
+
   }
 
-  //function para simular la carga de un API
+  //valores cargados al iniciar la aplicación 
   loadAPI():any{
     const response = {
-      name: "Miguel DIAZ",
-      email: 'mdiaz@gmail.com',
+      name: "Najhely Banda",
+      email: 'nbanda@gmail.com',
       message: "Escribe aquí tu mensaje...",
     };
 
-    this.formLogin.patchValue(response);
+    this.formValidation.patchValue(response);
     
   }
 
-  send(): any{
-    console.log(this.formLogin.value)
-  }
+  Mensaje ="";
 
+  Mensajes(){
+    if(this.formValidation.valid == true){
+      this.Mensaje = "Todos los datos son válidos";    
+    }
+    
+    if (this.formValidation.invalid == true){
+      this.Mensaje = "Todos los datos son inválidos";
+    }
+  }
+  send():any{
+    alert("Formulario completado");
+  }
 }

@@ -1,36 +1,44 @@
 
-<h1>adasdasdasd</h1>
 <body>
-  
+  <div class="d-flex justify-content-center">
+  <h1>Form Validation</h1></div>
+<div class="d-flex justify-content-center">
 
-<div class="p-6 rounded-lg shadow-lg bg-white max-w-md mt-8">
-  <form action="">
+  <form [formGroup]="formValidation" (submit)="send()">
 
-    <div class="form-group mb-6 bg-blue-400">
+    <div class="form-group mt-3">
+
     <!-- Name -->
-    <label for="name" class="bg-blue-400">Nombre:</label>
+    <label for="name">Nombre:</label>
     <input type="text" class="form-control" id="name"
-    formControlName="name"> </div>
+    formControlName="name"></div>
     
-    <div class="form-group mb-6">
+    <div class="form-group mt-2 mb-3">
       <!-- Email -->
-      <label for="email" class="bg-blue-400">Email:</label>
+      <label for="email" >Email:</label>
       <input type="text" class="form-control" id="email"
       formControlName="email"> </div>
 
-    <div class="form-group mb-6">
+    <div class="form-group mt-2 mb-3">
       <!-- Message -->
-      <label for="message" class="bg-blue-400">Message:</label>
+      <label for="message" >Message:</label>
       <textarea type="text" class="form-control" id="message"
+      rows="6"
+      cols="20"
       formControlName="message"> </textarea></div>
     
-    <div class="form-group mb-6">
+    <div class="form-group mt-2 mb-3 d-flex justify-content-center">
       <!-- Button -->
-      <button [disabled]="formLogin.invalid">Confirmar</button></div>
+      <button  class="form-control" (click)="send()" [disabled]="formValidation.invalid" >Confirmar</button></div>
     
-
+    <div class="form-group mt-2 mb-3 d-flex justify-content-center">
+      <p>{{Mensaje}}
+      </p>
+    </div>
+    
   </form>
 
+  <p></p>
 
 </div>
 </body>

@@ -1,3 +1,36 @@
 body {
-    background-color: red;
+    padding: 0em;
+    background-color: transparent;
+}
+h1 {
+    color: #1058a0;
+}
+form {
+    width: 23em;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.699);
+}
+
+textarea {
+    background-color: rgba(255, 255, 255, 0.699);
+}
+
+button {
+    width: 14em;
+    background-color: #85f9cacb;
+    font-weight: 600;
+    color: #1058a0;
+}
+
+button:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 10px 5px #12d5ee;
+}
+
+p {
+    font-size: 20px;
+    color: #1058a0;
+    font-weight: 540;
 }

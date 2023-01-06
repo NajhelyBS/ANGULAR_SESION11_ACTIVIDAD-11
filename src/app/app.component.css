@@ -1,0 +1,10 @@
+body {
+    background-image: linear-gradient(to top, #67a7e7, #38bff2, #12d5ee, #48e9e0, #85f9cb);
+    height: 39em;
+}
+p {
+    color: white;
+    font-size: 25px;
+    font-weight: 750;
+    text-shadow: 0px 2px 5px rgb(2, 107, 206);
+}
